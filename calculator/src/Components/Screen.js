@@ -5,7 +5,7 @@ export class Screen extends Component {
         let {result} = this.props;
         return (
             <form className="result">
-        <h2>{result}</h2>
+                <h2>{result}</h2>
         </form>
         )
     }

@@ -66,9 +66,6 @@ h3 {
   
 }
 
-h4 {
-  font-size:20px;
-}
 
 li {
   font-size:12px;
@@ -81,18 +78,15 @@ li {
   display: flex;
   flex-direction: column;
   margin:auto;
-  width:40%;
- 
-
 }
+
 /* Header */
 .wrapper {
   display:flex;
   justify-content: space-between;
   margin: 2rem auto 0rem; 
-  width:100%;
+  width:325px;
 }
-
 
 .toggle-wrapper{
   display:flex;
@@ -106,15 +100,17 @@ li {
 /* Form */
 Form {
   margin:1rem;
-  width:100%;
+  width:325px;
+  height:4rem;
   background-color: var(--main-screen-bg);
   border-radius: 6px;
+  overflow:hidden;
 }
 
 /* Calculator buttons */
 
 .container {
-  width:100%;
+
   border-radius: 8px;
   background-color: var(--main-toggle-bg);
 }
@@ -151,6 +147,7 @@ Form {
   border: 1px var(--key-shadow-tertiary) solid;
   border-bottom: 3px var(--key-shadow-tertiary) solid;
   border-radius: 6px;
+  font-size:20px;
 }
 
 .odd-btn {
@@ -192,7 +189,7 @@ Form {
 
 
 .content {
-  width:80%;
+  
 }
 
   
@@ -203,7 +200,7 @@ Form {
 
 @media (min-width:1200px) {
   .content {
-    width:30%;
+   
   }
   
   /* .btn {

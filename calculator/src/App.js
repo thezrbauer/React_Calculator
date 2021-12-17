@@ -1,10 +1,63 @@
+import React, { Component } from 'react';
 import './index.css';
-import Screen from './Components/screen';
+import Screen from './components/Screen';
+import Keypad from './components/Keypad';
+class App extends Component {  
+      constructor() {
+        super();
+  
+          this.state = {
+                result:""
+    }
+  }
+ onClick = button => {
+
+    if(button === "="){
+        this.calculate()
+    }
+  
+    else if(button === "res"){
+        this.reset()
+    }
+    else if(button === "del"){
+        this.backspace()
+    }
+  
+    else {
+        this.setState({
+            result: this.state.result + button
+        })
+    }
+  };
+  
+  
+ calculate = () => {
+    try {
+        this.setState({
+            // eslint-disable-next-line
+            result: (eval(this.state.result) || "" ) + ""
+        })
+    } catch (e) {
+        this.setState({
+            result: "error"
+        })
+    }
+};
+
+ reset = () => {
+      this.setState({
+          result: ""
+      })
+  };
+
+ backspace = () => {
+      this.setState({
+          result: this.state.result.slice(0, -1)
+      })
+  };
 
 
-
-function App() {
-
+  render() {
   return (
     <div className="App">
       <div className="content">
@@ -19,108 +72,11 @@ function App() {
           </ul>
         </div>
       </header>
-     <Screen onClick={this.onClick}/>
-     <div className="container">
-      <div className="keyboard-top">
-        <div className="btn-container">
-          <button className="btn">
-            <h4>7</h4></button>
-        </div>
-        <div className="btn-container"> 
-          <button className="btn">
-            <h4>8</h4>
-            </button>
-          </div>
-        <div className="btn-container">
-           <button className="btn"> 
-           <h4>9</h4>
-           </button>
-           </div>
-        <div className="btn-container"> 
-          <button className="btn odd-btn">
-          <h4 id="del">DEL</h4>
-            </button>
-          </div>
-         
-          <div className="btn-container">
-          <button className="btn">
-          <h4>4</h4>
-            </button>
-        </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>5</h4>
-            </button>
-          </div>
-        <div className="btn-container">
-           <button className="btn">
-           <h4>6</h4>
-             </button>
-           </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>+</h4>
-            </button>
-          </div>
-
-          <div className="btn-container">
-          <button className="btn">
-          <h4>3</h4>
-            </button>
-        </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>2</h4>
-            </button>
-          </div>
-        <div className="btn-container">
-           <button className="btn">
-           <h4>1</h4>
-             </button>
-           </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>-</h4>
-            </button>
-          </div>
-
-          <div className="btn-container">
-          <button className="btn">
-          <h4>.</h4>
-            </button>
-        </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>0</h4>
-            </button>
-          </div>
-        <div className="btn-container">
-           <button className="btn">
-           <h4>/</h4>
-             </button>
-           </div>
-        <div className="btn-container"> 
-          <button className="btn">
-          <h4>x</h4>
-            </button>
-          </div>
-          </div>
-
-          <div className="keyboard-btm">
-          <div className="btn-container">
-           <button className="btm-btn reset">Reset</button>
-           </div>
-          <div className="btn-container"> 
-          <button className="btm-btn equal">=</button>
-          </div>
-          </div>
-
-    
-
-     </div>
+      <Screen  result={this.state.result}/>
+      <Keypad  onClick={this.onClick}/>
      </div>
     </div>
   );
-}
+}}
 
 export default App;
