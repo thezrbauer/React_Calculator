@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './index.css';
 import Screen from './components/Screen';
 import Keypad from './components/Keypad';
+import {Header, Content} from './components/styles/Header.styled';
+import { ThemeProvider } from 'styled-components';
 class App extends Component {  
       constructor() {
         super();
@@ -59,23 +61,24 @@ class App extends Component {
 
   render() {
   return (
-    <div className="App">
-      <div className="content">
-      <header className="wrapper">
+    <ThemeProvider theme={{}}>
+      <Content className="content">
+      <Header className="wrapper">
         <h1>calc</h1>
         <div className="toggle-wrapper">
           <h3>THEME</h3>
+          
           <ul className="theme-toggle" >
             <li>1</li>
             <li>2</li>
             <li>3</li>
           </ul>
         </div>
-      </header>
+      </Header>
       <Screen  result={this.state.result}/>
       <Keypad  onClick={this.onClick}/>
-     </div>
-    </div>
+     </Content>
+    </ThemeProvider>
   );
 }}
 

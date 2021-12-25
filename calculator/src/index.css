@@ -27,7 +27,7 @@
 
 }
 
-:root[data-theme='dark'] {
+:root[data-theme='second'] {
   --main-bg: hsl(0, 0%, 90%);
   --main-toggle-bg: hsl(0, 5%, 81%);
   --main-screen-bg: hsl(0, 0%, 93%);
@@ -41,17 +41,31 @@
   --white:hsl(0, 0, 100%);
 }
 
-body {
+:root[data-theme='third'] {
+  --main-bg: hsl(268, 75%, 9%);
+  --main-toggle-bg: hsl(268, 71%, 12%);
+  --main-screen-bg: hsl(281, 89%, 26%);
+  --key-bg-primary:hsl(285, 91%, 52%);
+  --key-shadow-primary:hsl(176, 100%, 44%);
+  --key-bg-secondary:hsl(177, 92%, 70%);
+  --key-shadow-secondary: hsl(268, 47%, 21%);
+  --key-bg-tertiary:hsl(45, 7%, 89%);
+  --key-shadow-tertiary: hsl(290, 70%, 36%);
+  --text-color:   hsl(52, 100%, 62%);  
+  --white:hsl(0, 0, 100%);
+}
+
+ body {
   font-family: 'Spartan', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   background-color: var(--main-bg);
   color: white;
-}
+} 
 
-
+/* 
 h1 {
-  font-size:40px;
+  
 }
 
 h2 {
@@ -69,55 +83,53 @@ h3 {
 
 li {
   font-size:12px;
-}
+} */
 
 
-.content {
+/* .content {
   justify-content: center;
   align-items:center;
   display: flex;
   flex-direction: column;
   margin:auto;
-}
+} */
 
 /* Header */
-.wrapper {
+/* .wrapper {
   display:flex;
   justify-content: space-between;
   margin: 2rem auto 0rem; 
   width:325px;
-}
+} */
 
 .toggle-wrapper{
   display:flex;
   justify-content:space-evenly;
 }
 
-li {
+/* li {
   display:inline;
   list-style:none;
-}
+} */
 /* Form */
 Form {
-  margin:1rem;
+  /* margin:1rem;
   width:325px;
-  height:4rem;
+  height:4rem; */
   background-color: var(--main-screen-bg);
-  border-radius: 6px;
-  overflow:hidden;
+  /* border-radius: 6px;
+  overflow:hidden; */
 }
 
 /* Calculator buttons */
 
 .container {
-
-  border-radius: 8px;
   background-color: var(--main-toggle-bg);
 }
 
 
 
-.keyboard-top {
+/* .keyboard-top {
   display:grid;
   grid-template-columns: repeat(4, 60px);
   flex-wrap:wrap;
@@ -136,23 +148,24 @@ Form {
   gap:36px;
   padding:0rem 1rem;
    
-}
+} */
 
 
 .btn {
   background-color: var(--key-bg-tertiary);
   color: var(--text-color);
-  height:40px;
-  width:65px;
   border: 1px var(--key-shadow-tertiary) solid;
   border-bottom: 3px var(--key-shadow-tertiary) solid;
-  border-radius: 6px;
-  font-size:20px;
 }
+  /* border-radius: 6px;
+
+  font-size:20px;
+  height:40px;
+  width:65px;
+} */
 
 .odd-btn {
   background-color: var(--key-bg-primary);
-  color:white;
   border: 1px var(--key-shadow-primary) solid;
   border-bottom: 3px var(--key-shadow-primary) solid;
 }
@@ -161,15 +174,15 @@ Form {
 .btm-btn {
   background-color: var(--key-bg-tertiary);
   color: var(--text-color);
-  font-size:20px;
+  /* font-size:20px;
   height:40px;
-  width:143px;
+  width:143px; */
   border: 1px var(--key-shadow-tertiary) solid;
   border-bottom: 3px var(--key-shadow-tertiary) solid;
-  border-radius: 6px;
+  /* border-radius: 6px;
   margin-left:-9px;
   margin-bottom:1rem;
-  color:white;
+  color:white; */
 }
 
 
