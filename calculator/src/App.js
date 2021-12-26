@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './index.css';
 import Screen from './components/Screen';
 import Keypad from './components/Keypad';
 import {Header, Content} from './components/styles/Header.styled';
 import { ThemeProvider } from 'styled-components';
+
+// import WebFont from 'webfontloader';
+// import { GlobalStyles } from './theme/GlobalStyles';
+// import {useTheme} from './theme/useTheme';
+
+
+
 class App extends Component {  
       constructor() {
         super();
@@ -12,6 +19,9 @@ class App extends Component {
                 result:""
     }
   }
+
+ 
+  
  onClick = button => {
 
     if(button === "="){
@@ -61,7 +71,7 @@ class App extends Component {
 
   render() {
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider  theme={{}}>
       <Content className="content">
       <Header className="wrapper">
         <h1>calc</h1>
